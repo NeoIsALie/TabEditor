@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="PrtsDB" Class="PrtsDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-F796EKR\SQLEXPRESS;Initial Catalog=PrtsDB;Integrated Security=True" SettingsObjectName="DBCourse.Properties.Settings" SettingsPropertyName="PrtsDBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.addedby" Member="addedby">
+    <Type Name="addedby">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="fk_user_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fk_partiture_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="added_on" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="partiture_addedby" Member="partiture" ThisKey="fk_partiture_id" OtherKey="pk_partiture_id" Type="partiture" IsForeignKey="true" />
+      <Association Name="users_addedby" Member="users" ThisKey="fk_user_id" OtherKey="pk_user_id" Type="users" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.creators" Member="creators">
+    <Type Name="creators">
+      <Column Name="pk_creators_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="composer" Type="System.String" DbType="NChar(100)" CanBeNull="true" />
+      <Column Name="poet" Type="System.String" DbType="NChar(100)" CanBeNull="true" />
+      <Column Name="authors_of" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="partiture_creators" Member="partiture" ThisKey="authors_of" OtherKey="pk_partiture_id" Type="partiture" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.instruments" Member="instruments">
+    <Type Name="instruments">
+      <Column Name="pk_instrument_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="instrument_name" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Column Name="fk_part_in" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="partiture_instruments" Member="partiture" ThisKey="fk_part_in" OtherKey="pk_partiture_id" Type="partiture" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.partiture" Member="partiture">
+    <Type Name="partiture">
+      <Column Name="pk_partiture_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="work_number" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Column Name="title" Type="System.String" DbType="NChar(100)" CanBeNull="true" />
+      <Column Name="tempo" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Column Name="meter" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Column Name="note_length" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Column Name="part_key" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Column Name="filepath" Type="System.String" DbType="NChar(100)" CanBeNull="true" />
+      <Column Name="version_of" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="partiture_addedby" Member="addedby" ThisKey="pk_partiture_id" OtherKey="fk_partiture_id" Type="addedby" />
+      <Association Name="partiture_creators" Member="creators" ThisKey="pk_partiture_id" OtherKey="authors_of" Type="creators" />
+      <Association Name="partiture_instruments" Member="instruments" ThisKey="pk_partiture_id" OtherKey="fk_part_in" Type="instruments" />
+      <Association Name="partiture_partiture" Member="partiture2" ThisKey="pk_partiture_id" OtherKey="version_of" Type="partiture" />
+      <Association Name="partiture_software" Member="software" ThisKey="pk_partiture_id" OtherKey="fk_used_for_encoding" Type="software" />
+      <Association Name="partiture_partiture" Member="partiture1" ThisKey="version_of" OtherKey="pk_partiture_id" Type="partiture" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.software" Member="software">
+    <Type Name="software">
+      <Column Name="pk_software_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="software_name" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Column Name="encoding_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="fk_used_for_encoding" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="partiture_software" Member="partiture" ThisKey="fk_used_for_encoding" OtherKey="pk_partiture_id" Type="partiture" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.users" Member="users">
+    <Type Name="users">
+      <Column Name="pk_user_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="full_name" Type="System.String" DbType="NChar(100)" CanBeNull="true" />
+      <Column Name="user_login" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Column Name="user_password" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Column Name="registered_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="users_addedby" Member="addedby" ThisKey="pk_user_id" OtherKey="fk_user_id" Type="addedby" />
+    </Type>
+  </Table>
+</Database>

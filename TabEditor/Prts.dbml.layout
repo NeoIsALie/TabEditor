@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 13.25, 8.5" name="Prts">
+  <DataContextMoniker Name="/PrtsDataContext" />
+  <nestedChildShapes>
+    <classShape Id="1995cc4d-4826-4051-83ba-fc5ddfb2e7e2" absoluteBounds="8.375, 4.625, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/PrtsDataContext/addedby" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c97ea9d7-0d9f-4991-bdcd-b26eb50bf2f4" absoluteBounds="8.39, 5.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="77157a42-c54d-4a73-9456-7be801e21192" absoluteBounds="2.875, 3.125, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/PrtsDataContext/creators" />
+      <nestedChildShapes>
+        <elementListCompartment Id="30c96e5e-420c-448c-926c-d4fba8e260da" absoluteBounds="2.8900000000000006, 3.5850000000000009, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="edf5e856-ece1-4064-b5af-1ba040f46008" absoluteBounds="5.875, 1.875, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/PrtsDataContext/instruments" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b92f64ef-79d4-48db-94d7-53b801581355" absoluteBounds="5.8900000000000006, 2.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b2a32b62-22fa-403c-962c-6cf02dd7380a" absoluteBounds="5.75, 4.25, 2, 2.5401025390625005">
+      <DataClassMoniker Name="/PrtsDataContext/partiture" />
+      <nestedChildShapes>
+        <elementListCompartment Id="043c8332-fdd5-4319-99f0-f150c027cd3c" absoluteBounds="5.765, 4.71, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="15107652-ddb8-443f-9178-7c8cb0bae13a" absoluteBounds="2.25, 5.375, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/PrtsDataContext/software" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a7f365bc-1bbe-46ae-9fcc-5eb3446e1d58" absoluteBounds="2.265, 5.8350000000000009, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f85f33d6-50a6-4ce4-873b-678cfcaed23b" absoluteBounds="11, 4.625, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/PrtsDataContext/users" />
+      <nestedChildShapes>
+        <elementListCompartment Id="37495ed4-d73b-4a1e-976f-6ccddd00a6b1" absoluteBounds="11.015, 5.085, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(7.75 : 5.41429768880208); (8.375 : 5.41429768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/PrtsDataContext/partiture/partiture_addedby" />
+      <nodes>
+        <classShapeMoniker Id="b2a32b62-22fa-403c-962c-6cf02dd7380a" />
+        <classShapeMoniker Id="1995cc4d-4826-4051-83ba-fc5ddfb2e7e2" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.75 : 4.47679768880208); (4.875 : 4.47679768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/PrtsDataContext/partiture/partiture_creators" />
+      <nodes>
+        <classShapeMoniker Id="b2a32b62-22fa-403c-962c-6cf02dd7380a" />
+        <classShapeMoniker Id="77157a42-c54d-4a73-9456-7be801e21192" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6.8125 : 4.25); (6.8125 : 3.2612939453125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/PrtsDataContext/partiture/partiture_instruments" />
+      <nodes>
+        <classShapeMoniker Id="b2a32b62-22fa-403c-962c-6cf02dd7380a" />
+        <classShapeMoniker Id="edf5e856-ece1-4064-b5af-1ba040f46008" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6.45923076923077 : 6.7901025390625); (6.45923076923077 : 7.0401025390625); (7.05461538461539 : 7.0401025390625); (7.05461538461539 : 6.7901025390625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PrtsDataContext/partiture/partiture_partiture" />
+      <nodes>
+        <classShapeMoniker Id="b2a32b62-22fa-403c-962c-6cf02dd7380a" />
+        <classShapeMoniker Id="b2a32b62-22fa-403c-962c-6cf02dd7380a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.75 : 6.41558558067909); (4.25 : 6.41558558067909)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/PrtsDataContext/partiture/partiture_software" />
+      <nodes>
+        <classShapeMoniker Id="b2a32b62-22fa-403c-962c-6cf02dd7380a" />
+        <classShapeMoniker Id="15107652-ddb8-443f-9178-7c8cb0bae13a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11 : 5.41429768880208); (10.375 : 5.41429768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/PrtsDataContext/users/users_addedby" />
+      <nodes>
+        <classShapeMoniker Id="f85f33d6-50a6-4ce4-873b-678cfcaed23b" />
+        <classShapeMoniker Id="1995cc4d-4826-4051-83ba-fc5ddfb2e7e2" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

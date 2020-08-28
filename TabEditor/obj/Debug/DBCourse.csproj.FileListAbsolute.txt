@@ -1,0 +1,12 @@
+J:\DBCourse\DBCourse\DBCourse\bin\Debug\DBCourse.exe.config
+J:\DBCourse\DBCourse\DBCourse\obj\Debug\DBCourse.csprojResolveAssemblyReference.cache
+J:\DBCourse\DBCourse\DBCourse\obj\Debug\DBCourse.MainWindow.resources
+J:\DBCourse\DBCourse\DBCourse\obj\Debug\DBCourse.Properties.Resources.resources
+J:\DBCourse\DBCourse\DBCourse\obj\Debug\DBCourse.csproj.GenerateResource.Cache
+J:\DBCourse\DBCourse\DBCourse\bin\Debug\DBCourse.exe
+J:\DBCourse\DBCourse\DBCourse\bin\Debug\DBCourse.pdb
+J:\DBCourse\DBCourse\DBCourse\obj\Debug\DBCourse.exe
+J:\DBCourse\DBCourse\DBCourse\obj\Debug\DBCourse.pdb
+J:\DBCourse\DBCourse\DBCourse\obj\Debug\DBCourse.Info.resources
+J:\DBCourse\DBCourse\DBCourse\obj\Debug\DBCourse.Authorization.resources
+J:\DBCourse\DBCourse\DBCourse\obj\Debug\DBCourse.Registration.resources
